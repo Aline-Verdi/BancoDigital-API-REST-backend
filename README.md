@@ -5,7 +5,7 @@
 -   Javascript: Funções (Callbacks), Métodos de arrays II e III, Datas em Js.
 -   Node: Servidores, APIs REST, JSON, Integrações.
 
-## O objeto foi desenvolvedor e criar uma API REST para um Banco Digital que permita:
+## O objetivo foi desenvolver uma API REST para um Banco Digital que permita:
 
 -   Criar conta bancária
 -   Listar contas bancárias
