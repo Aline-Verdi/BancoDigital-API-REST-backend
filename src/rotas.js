@@ -3,6 +3,7 @@ const contasBancarias = require('./controladores/contas');
 const transacoes = require('./controladores/transacoes');
 const rotas = express();
 
+rotas.get('/', contasBancarias.listarContasBancarias);
 rotas.get('/contas', contasBancarias.listarContasBancarias);
 rotas.post('/contas', contasBancarias.criarContaBancaria);
 rotas.put('/contas/:numeroConta/usuario', contasBancarias.atualizarContaBancaria);
