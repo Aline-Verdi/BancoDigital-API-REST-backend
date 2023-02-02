@@ -181,11 +181,16 @@ const exibirExtrato = (req, res) => {
     });
 };
 
+const teste = (req, res) => {
+    return res.status(200).json({ mensagem: 'Parabéns, finalmente conseguiu fazer o deploy!' });
+};
+
 module.exports = {
     listarContasBancarias,
     criarContaBancaria,
     atualizarContaBancaria,
     excluirContaBancaria,
     exibirSaldo,
-    exibirExtrato
+    exibirExtrato,
+    teste
 };
