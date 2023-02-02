@@ -4,26 +4,26 @@
     "description": "![](https://i.imgur.com/xG74tOh.png)",
     "main": "index.js",
     "scripts": {
-      "dev": "nodemon ./src/index.js",
-      "start": "node ./src/index.js"
+        "dev": "nodemon ./src/index.js",
+        "start": "node ./src/index.js"
     },
     "repository": {
-      "type": "git",
-      "url": "git+https://github.com/Aline-Verdi/desafio-backend-m02-dds-t08.git"
+        "type": "git",
+        "url": "git+https://github.com/Aline-Verdi/desafio-backend-m02-dds-t08.git"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "bugs": {
-      "url": "https://github.com/Aline-Verdi/desafio-backend-m02-dds-t08/issues"
+        "url": "https://github.com/Aline-Verdi/desafio-backend-m02-dds-t08/issues"
     },
     "homepage": "https://github.com/Aline-Verdi/desafio-backend-m02-dds-t08#readme",
     "dependencies": {
-      "date-fns": "^2.29.3",
-      "express": "^4.18.1"
+        "date-fns": "^2.29.3",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.1"
     },
     "devDependencies": {
-      "nodemon": "^2.0.20"
+        "nodemon": "^2.0.20"
     }
-  }
-  
+}
