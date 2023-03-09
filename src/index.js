@@ -7,6 +7,6 @@ app.use(express.json());
 
 app.use(rotas);
 
-app.listen(process.env.PORT, () => {
-    console.log(`API rodando na porta ${process.env.PORT}`);
+app.listen(process.env.PORTA, () => {
+    console.log(`API rodando na porta ${process.env.PORTA}`);
 });
