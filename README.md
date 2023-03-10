@@ -28,11 +28,11 @@ Os dados estão persistidos em memória, no objeto existente dentro do arquivo b
 
 Esse endpoint irá criar uma conta bancária, onde será gerado um número único para identificação da conta (número da conta).
 
-    -   Criação de uma nova conta cujo número é único
-    -   CPF é um campo único.
-    -   E-mail é um campo único.
-    -   Verificaração se todos os campos foram informados (todos são obrigatórios)
-    -   Definição do saldo inicial da conta como 0
+- Criação de uma nova conta cujo número é único
+- CPF é um campo único.
+- E-mail é um campo único.
+- Verificaração se todos os campos foram informados (todos são obrigatórios)
+- Definição do saldo inicial da conta como 0
 
 -   **Requisição** - O corpo (body) irá possuir um objeto com as seguintes propriedades:
 
@@ -79,8 +79,8 @@ Esse endpoint irá criar uma conta bancária, onde será gerado um número únic
 
 Esse endpoint irá listar todas as contas bancárias existentes.
 
-    -   Verificação se a senha do banco foi informada (passado como query params na url)
-    -   Validação se a senha do banco está correta
+- Verificação se a senha do banco foi informada (passado como query params na url)
+- Validação se a senha do banco está correta
 
 -   **Requisição** - query params 
 
@@ -135,11 +135,11 @@ Esse endpoint irá listar todas as contas bancárias existentes.
 
 Esse endpoint irá atualizar apenas os dados do usuário de uma conta bancária.
 
-    -   Verificação se foi passado todos os campos no body da requisição
-    -   Verificação se o número da conta passado como parametro na URL é válida
-    -   Verificação se já existe outro registro com o mesmo CPF 
-    -   Verificação se já existe outro registro com o mesmo E-mail
-    -   Atualização dos dados do usuário de uma conta bancária
+- Verificação se foi passado todos os campos no body da requisição
+- Verificação se o número da conta passado como parametro na URL é válida
+- Verificação se já existe outro registro com o mesmo CPF 
+- Verificação se já existe outro registro com o mesmo E-mail
+- Atualização dos dados do usuário de uma conta bancária
 
 -   **Requisição** - O corpo (body) irá possuir um objeto com todas as seguintes propriedades:
 
@@ -185,13 +185,13 @@ Esse endpoint irá atualizar apenas os dados do usuário de uma conta bancária.
 
 Esse endpoint irá excluir uma conta bancária existente.
 
-    -   Verificação se o número da conta passado como parametro na URL é válido
-    -   Permitir excluir uma conta bancária apenas se o saldo for 0 (zero)
-    -   Remover a conta do objeto de persistência de dados.
+- Verificação se o número da conta passado como parametro na URL é válido
+- Permitir excluir uma conta bancária apenas se o saldo for 0 (zero)
+- Remover a conta do objeto de persistência de dados.
 
 -   **Requisição**
 
-    -   Numero da conta bancária (passado como parâmetro na rota)
+    -   Número da conta bancária (passado como parâmetro na rota)
 
 -   **Resposta**
 
@@ -215,10 +215,10 @@ Esse endpoint irá excluir uma conta bancária existente.
 
 Esse endpoint irá somar o valor do depósito ao saldo de uma conta válida e registrar essa transação.
 
-    -   Verificação se o número da conta e o valor do deposito foram informados no body
-    -   Verificação se a conta bancária informada existe
-    -   Não permitir depósitos com valores negativos ou zerados
-    -   Somar o valor de depósito ao saldo da conta encontrada
+- Verificação se o número da conta e o valor do deposito foram informados no body
+- Verificação se a conta bancária informada existe
+- Não permitir depósitos com valores negativos ou zerados
+- Somar o valor de depósito ao saldo da conta encontrada
 
 -   **Requisição** - O corpo (body) irá possuir um objeto com as seguintes propriedades:
 
@@ -234,8 +234,8 @@ Esse endpoint irá somar o valor do depósito ao saldo de uma conta válida e re
 ```javascript
 // POST /transacoes/depositar
 {
-	"numero_conta": "1",
-	"valor": 1900
+    "numero_conta": "1",
+    "valor": 1900
 }
 ```
 
@@ -266,11 +266,11 @@ Esse endpoint irá somar o valor do depósito ao saldo de uma conta válida e re
 
 Esse endpoint irá realizar o saque de um valor em uma determinada conta bancária e registrar essa transação.
 
-    -   Verificação se o número da conta, o valor do saque e a senha foram informados no body
-    -   Verificação se a conta bancária informada existe
-    -   Verificação se a senha informada é uma senha válida para a conta informada
-    -   Verificação se há saldo disponível para saque
-    -   Subtração do valor sacado do saldo da conta encontrada
+- Verificação se o número da conta, o valor do saque e a senha foram informados no body
+- Verificação se a conta bancária informada existe
+- Verificação se a senha informada é uma senha válida para a conta informada
+- Verificação se há saldo disponível para saque
+- Subtração do valor sacado do saldo da conta encontrada
 
 -   **Requisição** - O corpo (body) irá possuir um objeto com as seguintes propriedades:
 
@@ -287,8 +287,8 @@ Esse endpoint irá realizar o saque de um valor em uma determinada conta bancár
 ```javascript
 // POST /transacoes/sacar
 {
-	"numero_conta": "1",
-	"valor": 1900,
+    "numero_conta": "1",
+    "valor": 1900,
     "senha": "123456"
 }
 ```
@@ -306,9 +306,9 @@ Esse endpoint irá realizar o saque de um valor em uma determinada conta bancár
 
 ```javascript
 {
-    "data": "2021-08-10 23:40:35",
-    "numero_conta": "1",
-    "valor": 10000
+     "data": "2021-08-10 23:40:35",
+     "numero_conta": "1",
+     "valor": 10000
 }
 ```
 ---
@@ -318,13 +318,13 @@ Esse endpoint irá realizar o saque de um valor em uma determinada conta bancár
 
 Esse endpoint irá permitir a transferência de recursos (dinheiro) de uma conta bancária para outra e registrar essa transação.
 
-    -   Verificação se o número da conta de origem, de destino, senha da conta de origem e valor da transferência foram informados no body
-    -   Verificação se a conta bancária de origem informada existe
-    -   Verificação se a conta bancária de destino informada existe
-    -   Verificação se a senha informada é uma senha válida para a conta de origem informada
-    -   Verificação se há saldo disponível na conta de origem para a transferência
-    -   Subtração do valor da transfência do saldo na conta de origem
-    -   Soma do valor da transferência no saldo da conta de destino
+- Verificação se o número da conta de origem, de destino, senha da conta de origem e valor da transferência foram informados no body
+- Verificação se a conta bancária de origem informada existe
+- Verificação se a conta bancária de destino informada existe
+- Verificação se a senha informada é uma senha válida para a conta de origem informada
+- Verificação se há saldo disponível na conta de origem para a transferência
+- Subtração do valor da transfência do saldo na conta de origem
+- Soma do valor da transferência no saldo da conta de destino
 
 -   **Requisição** - O corpo (body) irá possuir um objeto com as seguintes propriedade:
 
@@ -342,10 +342,10 @@ Esse endpoint irá permitir a transferência de recursos (dinheiro) de uma conta
 ```javascript
 // POST /transacoes/transferir
 {
-	"numero_conta_origem": "1",
-	"numero_conta_destino": "2",
-	"valor": 200,
-	"senha": "123456"
+    "numero_conta_origem": "1",
+    "numero_conta_destino": "2",
+    "valor": 200,
+    "senha": "123456"
 }
 ```
 #### Exemplo de Resposta
@@ -376,10 +376,10 @@ Esse endpoint irá permitir a transferência de recursos (dinheiro) de uma conta
 
 Esse endpoint irá retornar o saldo de uma conta bancária.
 
-    -   Verificação se o número da conta e a senha foram informadas (passado como query params na url)
-    -   Verificação se a conta bancária informada existe
-    -   Verificação se a senha informada é uma senha válida
-    -   Exibição do saldo da conta bancária em questão
+- Verificação se o número da conta e a senha foram informadas (passado como query params na url)
+- Verificação se a conta bancária informada existe
+- Verificação se a senha informada é uma senha válida
+- Exibição do saldo da conta bancária em questão
 
 -   **Requisição** - query params
 
@@ -409,10 +409,10 @@ Esse endpoint irá retornar o saldo de uma conta bancária.
 
 Esse endpoint irá listar as transações realizadas de uma conta específica.
 
-    -   Verificação se o número da conta e a senha foram informadas (passado como query params na url)
-    -   Verificação se a conta bancária informada existe
-    -   Verificação se a senha informada é uma senha válida
-    -   Retornado a lista de transferências, depósitos e saques da conta em questão.
+- Verificação se o número da conta e a senha foram informadas (passado como query params na url)
+- Verificação se a conta bancária informada existe
+- Verificação se a senha informada é uma senha válida
+- Retornado a lista de transferências, depósitos e saques da conta em questão.
 
 -   **Requisição** - query params
 
